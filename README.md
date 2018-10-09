@@ -19,4 +19,4 @@ A: It just includes another parameter for the flow speed, i.e. it corresponds to
 
 Q: "What is this <..mod.m>?"
 
-A: It is a small modification to have the steering vectors exactly as how Sijtsma describes it in his tech papers. That is, the powers of your scan points will always be relative to a reference distance. See <FastBeamforming3mod.m> comments for additional info.
+A: It is a small modification to have the steering vectors exactly as how Sijtsma describes it in his tech papers. That is, the powers of your scan points will always be relative to a reference distance. See <FastBeamforming3mod.m> comments for additional info. Sijtsma's steering vector can also be called from <SarradjBeamforming.m> and using 'pieter' as steering option.
