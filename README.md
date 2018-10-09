@@ -1,5 +1,5 @@
 # Acoustic-Beamforming
-Various beamforming files written in MATLAB. Allows for convection, different types of steering vectors and more.
+Various beamforming files written in MATLAB. Allows for convection, different types of steering vectors and more. They are known to work with R2016b (9.1.0.441655).
 
 Requires time pressure signal of microphones as a matrix representation.
 Use developCSM to construct CSM with a given sampling frequency.
