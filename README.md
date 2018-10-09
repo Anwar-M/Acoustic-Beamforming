@@ -19,7 +19,7 @@ A: The beamforming algorithm is rewritten to apply fast vector manipulation. Thi
 
 Q: "What is <..Conv.m>?
 
-A: It just includes another parameter for the flow speed, i.e. it corresponds to the same script without 'Conv' for U = [0 0 0]. Files will be removed/re-arranged later. (This script was used as a seperate to investigate performance between different scripts, but is now obsolete.)
+A: It just includes another parameter for the flow speed, i.e. it corresponds to the same script without 'Conv' at the end of the name for U = [0 0 0]. Files will be removed/re-arranged later. (This script was used as a seperate to investigate performance between different scripts, but is now obsolete.)
 
 Q: "What is this <..mod.m>?"
 
