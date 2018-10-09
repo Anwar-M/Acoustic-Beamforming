@@ -11,7 +11,7 @@ A: If you have your time pressure signals and the microphone configuration you s
 
 Q: "But I don't have array data...:("
 
-A: You can simulate array data using <simulateArraydata.m>. It requires the source position, microphone positions, sample frequency and other parameters. See the function description. Allows for multiple sources and flow. The output is are time pressure signals for the different microphones. This is then used as an input to <developCSM.m>. An example where it is used can be seen in <Main1_Basic.m> in my 'Beamforming-Simulations' repository.
+A: You can simulate array data using <simulateArraydata.m>. It requires the source position, microphone positions, sample frequency and other parameters. See the function description. Allows for multiple sources and flow. The output is time pressure signals for the different microphones. This is then used as an input to <developCSM.m>. An example where it is used can be seen in <Main1_Basic.m> in my 'Beamforming-Simulations' repository.
 
 Q: "What is going on in <FastBeamformingX.m>?"
 
