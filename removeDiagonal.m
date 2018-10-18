@@ -5,9 +5,12 @@ function CSM = removeDiagonal(CSM)
 %
 % Assumes a CSM as a 2D or 3D matrix of n_mic x n_mic x n_f
 % n_mic: amount of microphones
-% n_f: amount of frequencies, can be 1, i.e. 2D matrix
+% n_f: amount of frequencies, can be 1, i.e. a 2D matrix
 %
-% Remember to remove (i.e. = 0) negative pressures from beamform map!
+% Remember to remove (i.e. = 0, or better < 1e-20 to prevent -Inf dB values) 
+% negative pressures from beamform map! The beamform map are the source
+% powers obtained for you scan plane immediately after beamforming and
+% before calculating SPL values.
 %
 % Anwar Malgoezar, June 2017
 % Group ANCE

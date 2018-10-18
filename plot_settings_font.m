@@ -44,8 +44,14 @@ end
 
 if clr_bar(1)
     %cb = colorbar;
-    cb = colorbar('YTick', linspace(clr_bar(2),clr_bar(3),7));
-    caxis([clr_bar(2) clr_bar(3)])
+    
+    if numel(clr_bar)>3
+        cb = colorbar('YTick', clr_bar(2:end));
+        caxis([clr_bar(2) clr_bar(end)])
+    else
+        cb = colorbar('YTick', linspace(clr_bar(2),clr_bar(3),7));
+        caxis([clr_bar(2) clr_bar(3)])
+    end
     title(cb, ctitlab, 'Fontsize', fontsize, 'FontName', 'CMU Serif', 'Interpreter', 'Latex');
 %     ylabel(cb, ctitlab, 'Fontsize', fontsize, 'FontName', 'CMU Serif', 'Interpreter', 'Latex');
     set(cb, 'TickLabelInterpreter', 'latex');
