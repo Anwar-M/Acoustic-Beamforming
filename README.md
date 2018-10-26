@@ -27,4 +27,4 @@ A: It is a small modification to have the steering vectors exactly as how Sijtsm
 
 Q: "I would love to experiment with this beamforming stuff... if only I could use my mouse to click for multiple source positions on a map, do the same to construct my microphone array, and see the result with beamforming...!"
 
-A: Are you lucky or what? By chance (ahem) I made these kind of scripts! It can be found in... (continue answer and add the files).
+A: Are you lucky or what? By chance (ahem) I made these kind of scripts! It can be found in the Beamforming-Simulations repository <Experiment_SourcesAndMics.m> using files from this repository.
