@@ -57,6 +57,7 @@ N_samples = length(t);
 
 p = zeros(N_mic, N_samples);
 
+% r_ac = 1;
 for I = 1:N_source
     r_ac = norm(x_ac-source_info(I, 1:3));
     

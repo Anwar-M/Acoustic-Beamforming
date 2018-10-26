@@ -1,4 +1,4 @@
-function [X, Y, B] = FastBeamforming4(CSM, plane_distance, frequencies, ...
+function [X, Y, B] = FastBeamforming4mod(CSM, plane_distance, frequencies, ...
     scan_limits, grid_resolution, mic_positions, c)
 % Fast (fewer loops, using array manipulation) beamforming considering
 % steering vector formulation IV 'by' Ennes Sarradj. I.e. it is the same
@@ -55,7 +55,7 @@ for K = 1:N_freqs
                      (x_t(:,2) - mic_positions(2,I)).^2 + ...
                      (x_t(:,3) - mic_positions(3,I)).^2 );
         sum_r_ti = sum_r_ti + r_ti.^(-2);
-        h(I, :) = exp(-1i*k*(r_ti-r_t0))./r_ti;
+        h(I, :) = 4*pi.*exp(-1i*k*r_ti)./r_ti;
     end
     
     for I = 1:N_mic

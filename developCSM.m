@@ -36,7 +36,7 @@ end_sample = ceil(t_end*Fs);
 % I.e. if we have 5000 sample block with 50% overlap, the next START sample
 % for the NEXT block would be at sample 5000/2 + 1 = 2501, so at half of 
 % the current block.
-offset_sample = block_samples * (1 - overlap) + 1 - 1;
+offset_sample = round(block_samples * (1 - overlap) + 1 - 1);
 
 % Calculate amount of blocks able to fit between start and end time with
 % overlap

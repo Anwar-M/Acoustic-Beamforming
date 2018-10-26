@@ -1,18 +1,19 @@
-function [X, Y, B] = FastBeamforming4(CSM, plane_distance, frequencies, ...
+function [X, Y, B] = FastBeamforming2mod(CSM, plane_distance, frequencies, ...
     scan_limits, grid_resolution, mic_positions, c)
 % Fast (fewer loops, using array manipulation) beamforming considering
-% steering vector formulation IV 'by' Ennes Sarradj. I.e. it is the same
-% as SarradjBeamforming.m using form4. This code is faster, but less
-% intuitive to understand. Best steering to use for 3D beamforming.
+% steering vector formulation II 'by' Ennes Sarradj. I.e. it is the same
+% as SarradjBeamforming.m using form2. This code is faster, but less
+% intuitive to understand.
 %
 % Not propagating forward to the array center, i.e. use a reference
 % distance.
-
-% fprintf('\t------------------------------------------\n');
+% NOT thoroughly tested as of 18 May 2018
 %
-% Anwar Malgoezar, March 2018
+% Anwar Malgoezar
 % Group ANCE
 
+
+% fprintf('\t------------------------------------------\n');
 fprintf('\tStart beamforming...\n');
 
 % Setup scanning grid using grid_resolution and dimensions
@@ -55,12 +56,10 @@ for K = 1:N_freqs
                      (x_t(:,2) - mic_positions(2,I)).^2 + ...
                      (x_t(:,3) - mic_positions(3,I)).^2 );
         sum_r_ti = sum_r_ti + r_ti.^(-2);
-        h(I, :) = exp(-1i*k*(r_ti-r_t0))./r_ti;
+        h(I, :) = 4*pi*r_ti.*exp(-1i*k*r_ti);
     end
     
-    for I = 1:N_mic
-        h(I, :) = h(I, :) ./ sqrt(N_mic*sum_r_ti.');
-    end
+    h = h/N_mic;
     
     B = B + sum(h.*(CSM(:,:,K)*conj(h)), 1);
 
