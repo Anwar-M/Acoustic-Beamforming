@@ -15,11 +15,11 @@ A: You can simulate array data using <simulateArraydata.m>. It requires the sour
 
 Q: "What is going on in <FastBeamformingX.m>?"
 
-A: The beamforming algorithm is rewritten to apply fast vector manipulation. This is harder to comprehend (we go from matrices to vectors and do beamforming). To understand what is going on you can use <SarradjBeamforming.m> which is exactly the same given the steering vector, e.g. 'form3' corresponds to <FastBeamforming3.m>. <SarradjBeamforming.m> only considers a single scan point, i.e. you have to build your own loop outside the function to evaluate a scan plane. In the end it is easier to understand 'what is going on', but it will also be severely slower than the other function.
+A: The beamforming algorithm is rewritten to apply fast vector manipulation. This is harder to comprehend (we go from matrices to vectors and do beamforming). To understand what is going on, you can use <SarradjBeamforming.m> which is exactly the same given the steering vector, e.g. 'form3' corresponds to <FastBeamforming3.m>. <SarradjBeamforming.m> only considers a single scan point, i.e. you have to build your own loop outside the function to evaluate a scan plane. In the end it is easier to understand 'what is going on', but it will also be severely slower than the other function.
 
 Q: "What is <..Conv.m>?
 
-A: It just includes another parameter for the flow speed, i.e. it corresponds to the same script without 'Conv' at the end of the name for U = [0 0 0]. Files will be removed/re-arranged later. (This script was used as a seperate to investigate performance between different scripts, but is now obsolete.)
+A: It just includes another parameter for the flow speed, i.e. it corresponds to the same script without 'Conv' at the end of the name for U = [0 0 0]. Files will be removed/re-arranged later. (This scripts were used as seperate to investigate performance between them, i.e. some are now obsolete as you can simply put a zero vector in 'Conv'.)
 
 Q: "What is this <..mod.m>?"
 
@@ -27,4 +27,4 @@ A: It is a small modification to have the steering vectors exactly as how Sijtsm
 
 Q: "I would love to experiment with this beamforming stuff... if only I could use my mouse to click for multiple source positions on a map, do the same to construct my microphone array, and see the result with beamforming...!"
 
-A: Are you lucky or what? By chance (ahem) I made these kind of scripts! It can be found in... (continue answer and add the files).
+A: Are you lucky or what? By chance (ahem) I made these kind of scripts! It can be found in the Beamforming-Simulations repository <Experiment_SourcesAndMics.m> using files from this repository.
